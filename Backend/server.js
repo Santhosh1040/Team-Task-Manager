@@ -9,7 +9,7 @@ const taskRoutes = require("./routes/taskRoutes");
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://team-task-manager-1qbnm9ih4-santhoshs-projects-1fd6dff9.vercel.app",
     credentials: true,
   })
 );
