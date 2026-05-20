@@ -11,11 +11,9 @@ const app = express();
 // CORS
 app.use(
   cors({
-    origin: [
-      "https://team-task-manager-1qbnm9ih4-santhoshs-projects-1fd6dff9.vercel.app",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
