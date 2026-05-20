@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  MEMBER
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model User {
+  id       String @id @default(cuid())
+
+  name     String
+  email    String @unique
+  password String
+
+  role     Role @default(MEMBER)
+
+  // Projects created by admin
+  createdProjects Project[] @relation("CreatedProjects")
+
+  // Projects assigned to member
+  assignedProjects ProjectMember[]
+
+  // Tasks assigned to member
+  assignedTasks TaskMember[]
+
+  createdAt DateTime @default(now())
+}
+
+model Project {
+  id          String @id @default(cuid())
+
+  title       String
+  description String?
+
+  // NEW
+  priority    Priority @default(MEDIUM)
+  dueDate     DateTime?
+
+  // Admin who created project
+  createdById String
+  createdBy   User @relation("CreatedProjects", fields: [createdById], references: [id])
+
+  // Members inside project
+  members ProjectMember[]
+
+  // Tasks inside project
+  tasks Task[]
+
+  createdAt DateTime @default(now())
+}
+
+model Task {
+  id          String @id @default(cuid())
+
+  title       String
+  description String?
+
+  status      TaskStatus @default(TODO)
+
+  priority    Priority @default(MEDIUM)
+
+  dueDate     DateTime?
+
+  // Task belongs to project
+  projectId   String
+  project     Project @relation(fields: [projectId], references: [id])
+
+  // Members assigned to task
+  assignedUsers TaskMember[]
+
+  createdAt DateTime @default(now())
+}
+
+//
+// PROJECT ↔ MEMBER RELATION
+//
+
+model ProjectMember {
+  id        String @id @default(cuid())
+
+  projectId String
+  userId    String
+
+  project   Project @relation(fields: [projectId], references: [id])
+
+  user      User @relation(fields: [userId], references: [id])
+
+  assignedAt DateTime @default(now())
+
+  @@unique([projectId, userId])
+}
+
+//
+// TASK ↔ MEMBER RELATION
+//
+
+model TaskMember {
+  id        String @id @default(cuid())
+
+  taskId    String
+  userId    String
+
+  task      Task @relation(fields: [taskId], references: [id])
+
+  user      User @relation(fields: [userId], references: [id])
+
+  assignedAt DateTime @default(now())
+
+  @@unique([taskId, userId])
+}
