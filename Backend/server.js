@@ -7,7 +7,12 @@ const projectRoutes = require("./routes/projectRoutes");
 const app = express();
 const taskRoutes = require("./routes/taskRoutes");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
