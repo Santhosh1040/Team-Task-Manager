@@ -17,6 +17,7 @@ app.use(
   })
 );
 
+// Middleware
 app.use(express.json());
 
 // Routes
@@ -29,8 +30,10 @@ app.get("/", (req, res) => {
   res.send("API Running");
 });
 
+// Port
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+// Start Server
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
