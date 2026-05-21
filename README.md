@@ -6,7 +6,7 @@ A full-stack Team Task Management platform built using React, Node.js, Express, 
 
 ---
 
-<h2>🌐 Live Demo</h2>
+<h2>Live Demo</h2>
 
 <p>
 <strong>Frontend:</strong><br>
@@ -48,7 +48,7 @@ https://team-task-manager-7s89.onrender.com
 
 ---
 
-<h3>📊 Dashboard Analytics</h3>
+<h3>Dashboard Analytics</h3>
 
 <ul>
   <li>Total Projects</li>
@@ -61,7 +61,7 @@ https://team-task-manager-7s89.onrender.com
 
 ---
 
-<h3>📝 Task Management</h3>
+<h3>Task Management</h3>
 
 <ul>
   <li>Create tasks with priority levels</li>
@@ -86,7 +86,7 @@ https://team-task-manager-7s89.onrender.com
 
 ---
 
-<h2>🛠️ Tech Stack</h2>
+<h2>Tech Stack</h2>
 
 <h3>Frontend</h3>
 
@@ -114,7 +114,7 @@ https://team-task-manager-7s89.onrender.com
 
 ---
 
-<h2>☁️ Deployment</h2>
+<h2>Deployment</h2>
 
 <table>
   <tr>
