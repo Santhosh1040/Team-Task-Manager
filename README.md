@@ -232,22 +232,7 @@ npm run dev
 </ul>
 
 
-<h2>👨‍💻 Author</h2>
-
-<p>
-<strong>Santhosh Kumar</strong>
-</p>
-
-<p>
-GitHub:<br>
-<a href="https://github.com/Santhosh1040" target="_blank">
-https://github.com/Santhosh1040
-</a>
-</p>
-
----
-
-<h2>⭐ Conclusion</h2>
+<h2>Conclusion</h2>
 
 <p>
 This project demonstrates full-stack development skills including frontend engineering, backend API development, database integration, authentication, deployment, responsive UI/UX implementation, and real-world team collaboration workflows using modern web technologies.
