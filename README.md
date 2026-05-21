@@ -37,7 +37,7 @@ https://team-task-manager-7s89.onrender.com
 
 ---
 
-<h3>👥 Team Collaboration</h3>
+<h3>Team Collaboration</h3>
 
 <ul>
   <li>Create and manage projects</li>
@@ -219,7 +219,7 @@ npm run dev
 
 ---
 
-<h2>📸 Demo Highlights</h2>
+<h2>Demo Highlights</h2>
 
 <ul>
   <li>Secure login/signup</li>
